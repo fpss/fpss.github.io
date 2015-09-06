@@ -7,6 +7,8 @@ layout: page
 
 
     <!--=========== BEGIN ABOUT SECTION ================-->
+{% for post in site.posts %} 
+{% if post.type == "about" %} 
     <section id="about">
       <div class="container">
         <div class="row">
@@ -16,12 +18,10 @@ layout: page
               <div class="heading">
                 <h2 class="wow fadeInLeftBig">About Us</h2>               
                 <div class="col-lg-10 col-md-10 col-sm-12">
-                {% for post in site.posts %} 
-                  {% if post.type == "about" %}    
+   
                     <h4>{{ post.title }},</h4>
-                    <p>{{ post.content }}:</p>
-                  {% endif %}
-                {% endfor %}    
+                    <p>{{ post.info }}:</p>
+ 
                 </div>
                 <div class="col-lg-2 col-md-2 hidden-sm hidden-xs">
                   <img class="logo-about" src="img/logo-up.gif" >
@@ -46,7 +46,7 @@ layout: page
                           </div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
-                             Through seminars that invite thought leaders, politicians, community leaders, academics and media to discuss events that are relevant and apt. Such events will seek to provide students with opportunities to make connections with people from across the private and public sector.
+                             {{ post.events }}
                             </div>
                           </div>
                         </div>
@@ -61,7 +61,7 @@ layout: page
                           </div>
                           <div id="collapseTwo" class="panel-collapse collapse">
                             <div class="panel-body">
-                            Alongside these topical seminars, our annual conference will provide students with an opportunity to organise and coordinate conferences across the diverse disciplines within our faculty and where appropriate we will deliver our conference in partnership with other universities. Our conference will provide students at all stages in the PhD with an opportunity to build valuable skills and enduring relationships with the community of scholars. 
+                            {{ post.network }}
                             </div>
                           </div>
                         </div>
@@ -76,9 +76,9 @@ layout: page
                           </div>
                           <div id="collapseThree" class="panel-collapse collapse">
                             <div class="panel-body">
-                             Our website will be a current repository of matters that are relevant to all students across our faculty. Such matters will include opportunities relating to the job market, funding, internships, seminars and upskilling.
+                             {{ post.more }}
                              <br><br> 
-                             <a href="about.html" class="ext-link">Read More.. <span class="fa fa-arrow-circle-right"></span></a>
+                             <a href="/about" class="ext-link">Read More.. <span class="fa fa-arrow-circle-right"></span></a>
                             </div>
                           </div>
                         </div>
@@ -109,6 +109,8 @@ layout: page
       </div>
 
     </section>
+{% endif %}
+{% endfor %}  
     <!--=========== END ABOUT SECTION ================-->
 
     <!--=========== BEGIN SERVICE SECTION ================-->
@@ -164,6 +166,7 @@ layout: page
         </div>
       </div>
     </section>
+ 
     <!--=========== END SERVICE SECTION ================-->
         <!--=========== BEGAIN TEAM SECTION ================-->
     <section id="team">
@@ -339,24 +342,35 @@ layout: page
     </section>
     <!--=========== END WORKS SECTION ================-->
 
-
-<!-- <div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
- -->
+    <!--=========== BEGAIN TESTIMONIAL SECTION ================-->
+    <section id="testimonial">
+      <div class="container"> 
+        <div class="row">
+          <div class=" col-lg-7 col-md-7 col-sm-6">
+            <!-- START BLOG HEADING -->
+            <div class="heading">
+              <h2 class="wow fadeInLeftBig">Gallery</h2>
+            </div>
+          </div>
+          <!-- BEGAIN PORTFOLIO GALLERY -->
+          <div class="row">
+            <div class="portfolio_gallery">
+              <div id="">
+                  <ul>
+                    <li data-tags="All" data-id="0" class="col-lg-3 col-md-3 col-sm-6" style="transition: height 500ms ease; height: 250px;"><img src="img/portfolio/small/1.jpg">
+                    </li>
+                    <li data-tags="All" data-id="1" class="col-lg-3 col-md-3 col-sm-6" style="transition: height 500ms ease; height: 250px;"><img src="img/portfolio/small/2.jpg">
+                    </li>
+                    <li data-tags="All" data-id="2" class="col-lg-3 col-md-3 col-sm-6"><img src="img/portfolio/small/3.jpg" >
+                    </li>
+                    <li data-tags="All" data-id="3" class="col-lg-3 col-md-3 col-sm-6"><img src="img/portfolio/small/4.jpg" >
+                    </li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+          <!-- END PORTFOLIO GALLERY -->          
+        </div>
+      </div>
+    </section>
+    <!--=========== END TESTIMONIAL SECTION ================-->
