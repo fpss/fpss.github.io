@@ -1592,7 +1592,7 @@ textarea .form-control {
 
 .about-page .side-image-2{
   width: 100%;
-  height: 350px;
+  height: 400px;
   margin-bottom: 60px;
 }
 
@@ -1632,4 +1632,13 @@ textarea .form-control {
 
 .single_contact_feaured a:hover,.single_contact_feaured a:focus{
   text-decoration: none;
+}
+
+.about_list{
+  line-height: 1.8em;
+  font-size: 14px !important;
+}
+
+.about-page #contactFeature h4{
+  border-bottom-color: transparent;
 }
