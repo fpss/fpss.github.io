@@ -14,7 +14,7 @@ $subject = $sub;
 // To send HTML mail, the Content-type header must be set.
 $headers = 'MIME-Version: 1.0' . "\r\n";
 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-$headers .= 'From:fphdss@gmail.com' . "\r\n"; // Sender's Email
+$headers .= 'From:oozkok@student.unimelb.edu.au' . "\r\n"; // Sender's Email
 //$headers .= 'Cc:' . $email. "\r\n"; // Carbon copy to Sender
 $template = '<div style="padding:50px; color:white;">Hello ' . $name . ',<br/>'
 . '<br/>Thank you...! For Contacting Us.<br/><br/>'
@@ -46,8 +46,8 @@ $sendmessage1 = "<div style=\"background-color:#7E7E7E; color:white;\">" . $temp
 // Message lines should not exceed 70 characters (PHP rule), so wrap it.
 $sendmessage1 = wordwrap($sendmessage1, 70);
 
-mail("swami.neha01@gmail.com", 'Contact message from fpss website', $sendmessage1, $headers);
-mail("fareez1234@gmail.com", 'Contact message from fpss website', $sendmessage1, $headers);
+mail("oozkok@student.unimelb.edu.au", 'Contact message from fpss website', $sendmessage1, $headers);
+mail("oozkok@student.unimelb.edu.au", 'Contact message from fpss website', $sendmessage1, $headers);
 echo "Your Request has been received and We will contact you soon. Thank You";
 // }
 } else {
